@@ -12,7 +12,7 @@
     font-family: Arial, Helvetica, sans-serif;
         }
         .banner{
-            background-image: url("../jLWOgN.jpg");
+            background-image: url('static/jLWOgN.jpg');
             width: 100vw;
             height: 100vh;
             background-position: center;
@@ -24,12 +24,12 @@
             display: flex;
             justify-content: space-around;
             flex-flow: wrap;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: row;
+            justify-content: space-around;
             align-items: center;
         }
         .card{
-            width: 80%;
+            width: 40%;
             background-color: cornsilk;   
             border-radius: 10px;
             box-shadow: 5px 5px 10px;
@@ -76,7 +76,7 @@
     </div>
     <div class="container">
         <div class="card">
-            <img src="../measuring-measure-004-512.png" alt="">
+            <img src="{{url_for('static' , filename='measuring-measure-004-512.png')}}" alt="">
             <h3>Weight Prediction</h3>
             <p>
                 <form action ="/home" method = "post"> 
@@ -90,7 +90,7 @@
             </p>                                                               
         </div>
         <div class="card">
-            <img src="../measuring-height-1593425-1351874.png" alt="">
+            <img src="{{url_for('static' , filename='measuring-height-1593425-1351874.png')}}" alt="">
             <h3>Height Prediction</h3>
             <p>
                 <form action ="/home1" method = "post"> 
