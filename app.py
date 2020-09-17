@@ -16,13 +16,15 @@ def home():
     gender=int(request.form.get('gender'))
     arr = np.array([gender,data1]).reshape(1,-1)
     prediction = modelw.predict(arr)
-    return render_template('index.html',weight=prediction)
+    output='{0:.{1}f} pounds'.format(prediction[0], 2)
+    return render_template('index.html',weight=output)
 @app.route('/home1',methods=['POST','GET'])
 def home1():
     data1 =int(request.form.get('weight'))
     gender=int(request.form.get('gender'))
     arr = np.array([gender,data1]).reshape(1,-1)
     prediction = modelh.predict(arr)
-    return render_template('index.html',height=prediction)
+    output='{0:.{1}f} inches'.format(prediction[0], 2)
+    return render_template('index.html',height=output)
 if __name__ == '__main__':
     app.run(debug=True)
